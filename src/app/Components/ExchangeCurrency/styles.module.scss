@@ -1,0 +1,11 @@
+@import '../../styles/mediaqueries';
+
+.card {
+    min-height: 350px;
+    width: 70vw;
+
+    @include tablet {
+        width: 70vw;
+        min-height: 200px;
+    }
+}

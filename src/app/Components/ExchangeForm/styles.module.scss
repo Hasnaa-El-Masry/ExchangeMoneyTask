@@ -1,0 +1,36 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/mediaqueries.scss';
+
+.form_container {
+
+    .fields_container {
+
+        @include flex(flex-start, flex-start, 1rem, column);
+
+        font-weight: 500;
+        margin-bottom: 1rem;
+
+    }
+
+
+    .btn {
+        border-radius: 20px;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+
+    @include tablet {
+        .fields_container {
+
+            flex-direction: row;
+            align-items: flex-end;
+
+        }
+
+        .btn {
+            width: 25%;
+        }
+    }
+
+}

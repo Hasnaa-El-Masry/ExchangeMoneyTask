@@ -1,0 +1,27 @@
+@import '../../styles/mixins.scss';
+
+.swapIcon {
+    @include flex(center, center, 1rem);
+
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 50%;
+
+    width: 30px;
+    height: 30px;
+    padding: 1rem;
+    transition: all .2s ease-in;
+
+    .icon {
+        transition: all .2s ease-in;
+    }
+
+    &:hover {
+        border-color: #1677ff;
+
+        .icon {
+            color: #1677ff;
+        }
+    }
+
+}

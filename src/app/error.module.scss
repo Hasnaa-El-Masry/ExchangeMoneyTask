@@ -1,0 +1,8 @@
+@import './styles/mixins';
+
+
+.error_container {
+    background-color: black;
+    height: 100vh;
+    @include flex(center,center,1rem, column);
+}

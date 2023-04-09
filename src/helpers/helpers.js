@@ -1,2 +1,0 @@
-export const updatedItems = (items, value) => items.map((item) => { return { ...item, disabled: value == item.value } });
-export const mappedCurrencies = (items) => items.map((item) => { return { lable: item.toLowerCase(), value: item, disabled:false } });

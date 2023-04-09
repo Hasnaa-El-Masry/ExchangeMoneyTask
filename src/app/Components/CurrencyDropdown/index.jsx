@@ -6,12 +6,12 @@ const CurrencyDropdown = ({ items, value, onChange }) => {
 
     return (
 
-        <Select
-            style={{ width: '100%' }}
-            onChange={onChange}
-            options={items}
-            value={value}
-        />
+            <Select
+                style={{ width: '100%' }}
+                onChange={onChange}
+                options={items}
+                value={value}
+            />
 
     )
 };

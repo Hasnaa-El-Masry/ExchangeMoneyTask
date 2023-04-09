@@ -4,10 +4,10 @@ import SwapIcon from "../SwapIcon";
 import CurrencyDropdown from "../CurrencyDropdown";
 import FieldNumber from "../FieldNumber";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { addResult, resetResult } from "@/redux/Exchange/exchangeSlice";
+import { resetResult } from "../../../redux/Exchange/exchangeSlice";
 import { useDispatch } from "react-redux";
-import { mappedCurrencies, updatedItems } from "@/helpers/helpers";
-import { fetchExchangeResult } from "@/redux/Exchange/exchangeActions";
+import { mappedCurrencies, updatedItems } from "../../../helpers";
+import { fetchExchangeResult } from "../../../redux/Exchange/exchangeActions";
 
 const ExchangeForm = ({ currencies }) => {
 
@@ -79,17 +79,18 @@ const ExchangeForm = ({ currencies }) => {
         />
 
         <CurrencyDropdown
-          items={useMemo(()=>updatedItems(loadedCurrencies, to),[to])}
+          data-testid='from'
+          items={useMemo(() => updatedItems(loadedCurrencies, to), [to])}
           value={from}
-          onChange={useCallback((val) => setFrom(val),[])}
+          onChange={useCallback((val) => setFrom(val), [])}
         />
 
         <SwapIcon onClick={swapHandler} />
 
         <CurrencyDropdown
-          items={useMemo(()=>updatedItems(loadedCurrencies, from),[from])}
+          items={useMemo(() => updatedItems(loadedCurrencies, from), [from])}
           value={to}
-          onChange={useCallback((val) => setTo(val),[])}
+          onChange={useCallback((val) => setTo(val), [])}
         />
 
       </div>

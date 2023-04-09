@@ -1,7 +1,7 @@
 'use client'
 
 import { Alert, Card } from 'antd';
-import ExchangeForm from '../ExchangeForm';
+import ExchangeForm from '../ExchangeForm/index.jsx';
 import Result from '../Result';
 import styles from './styles.module.scss';
 import { useSelector } from 'react-redux';
@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 export default function ExchangeCurrency({ currencies }) {
 
-    const { result, loading, error } = useSelector(state => state.exchange);
+    const store = useSelector(state => state.exchange);
 
     return (
 
@@ -17,9 +17,9 @@ export default function ExchangeCurrency({ currencies }) {
 
             <ExchangeForm currencies={currencies} />
 
-            <Result result={result} loading={loading}/>
+            <Result result={store?.result} loading={store?.loading}/>
 
-            {error && <Alert message={error} type="error" />}
+            {store?.error && <Alert message={store?.error} type="error"/>}
 
         </Card>
     )

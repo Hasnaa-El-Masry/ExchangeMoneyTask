@@ -1,4 +1,4 @@
-const { exchangeEndpoint, API_KEY } = require("@/utils/configs");
+const { exchangeEndpoint, API_KEY } = require("../../utils/configs");
 const { createAsyncThunk } = require("@reduxjs/toolkit");
 const { default: axios } = require("axios");
 
